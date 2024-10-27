@@ -1,0 +1,409 @@
+:root {
+  --primary-color: #2c3e50; 
+  --secondary-color: #f39c12; 
+  --background-color: #f5f5f5; 
+  --text-color: #333; 
+  --font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #ff6347;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-color: #ffcc00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #f2b200;
+  transform: translateY(-3px);
+}
+
+footer {
+  background-color: #ff6347;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+/* Hero Section Styles */
+#hero {
+  background-image: url('images/food.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 200px;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay for text contrast */
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 20px;
+  background-color: transparent;
+  padding-top: 1px;
+  padding-bottom: 10px;
+  border-radius: 30px;
+  padding-left: 0;
+}
+
+.hero-content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: var(--secondary-color);
+}
+
+/* Featured Dishes Section */
+#featured-dishes {
+  background-color: var(--background-color);
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.featured-dishes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.featured-dish {
+  max-width: 300px;
+  text-align: center;
+  margin: 0 20px 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.featured-dish:hover {
+  transform: scale(1.05);
+}
+
+.featured-dish img {
+  width: 300px;
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.featured-dish h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.featured-dish p {
+  margin-bottom: 10px;
+}
+
+/* Menu Section */
+section#menu {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  background-color: var(--background-color);
+}
+
+.menu-item {
+  flex: 0 0 calc(25% - 40px);
+  max-width: calc(25% - 40px);
+  text-align: center;
+  margin: 0 20px 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  height: 200px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* About Us Section */
+#about-us {
+  background-color: white;
+  padding: 20px 20px;
+  text-align: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin: 20px auto; 
+  max-width: 600px;
+}
+
+#about-us h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+#about-us p {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Contact Section */
+#contact {
+  background-color: white;
+  color: black;
+  padding: 20px 20px;
+  text-align: center;
+  border: 2px solid var(--primary-color); /* Add a border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  margin: 20px auto; /* Center the box with margin */
+  max-width: 600px; /* Maximum width of the contact box */
+  margin-bottom: 50px;
+}
+
+#send-message {
+  background-color: #f5f5f5; /* Light background for the message box */
+  color: black;
+  padding: 50px 20px;
+  text-align: center;
+  border: 2px solid black; /* Different border color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  margin: 50px auto; /* Center the box with margin */
+  max-width: 600px; /* Maximum width of the message box */
+}
+
+#contact h2, #send-message h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#send-message h3 {
+  font-size: 2rem;
+  margin-top: 30px; /* Add space above the form header */
+}
+
+#send-message form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Add space above the form */
+}
+
+#send-message input, #send-message textarea {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#send-message input[type="submit"] {
+  background-color: var(--secondary-color);
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#send-message input[type="submit"]:hover {
+  background-color: #f2b200;
+}
+#contact p .btn{
+  display: grid;
+  width:90px;
+  text-align: center;
+  margin-left: 230px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 5px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  .menu-item img {
+    height: 150px;
+  }
+
+  .featured-dish img,
+  .menu-item img {
+    height: 150px;
+  }
+
+  .section-container {
+    grid-template-columns: 1fr; /* Switch to one column on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  nav ul li {
+    margin-right: 5px;
+  }
+
+  .featured-dish img,
+  .menu-item img {
+    height: 100px;
+  }
+}
+
+/* Buttons */
+.btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: #070505;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Discounts and Delivery Guarantee Section */
+.section-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+  gap: 10px; /* Gap between the sections */
+}
+
+#discounts, #delivery-guarantee {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.discounts-content, .delivery-guarantee-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.discounts-content h2, .delivery-guarantee-content h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.discounts-content p, .delivery-guarantee-content p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+
+
+#discounts h2 {
+  color: var(--secondary-color);
+}
+

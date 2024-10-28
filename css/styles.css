@@ -81,7 +81,7 @@ footer a {
 
 
 #hero {
-  background-image: url('/images/food.jpg');
+  background-image: url('../images/food.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -180,7 +180,6 @@ section#menu {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 

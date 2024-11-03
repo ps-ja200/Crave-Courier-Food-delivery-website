@@ -1,9 +1,14 @@
-# Ignore IDE-specific files
-.vscode/
+# Composer dependencies
+/vendor/
+/composer.lock
 
-# Ignore system files
+# Environment config files
+.env
+
+
+# System files
 .DS_Store
 Thumbs.db
 
-# Ignore sensitive data files
-*.env
+# IDE/editor config files
+.vscode/

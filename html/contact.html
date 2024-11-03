@@ -3,52 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Food Delivery</title>
+    <title>Contact Us - Crave Courier</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .contact-section {
+            border: 2px solid black;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .contact-item {
+            text-align: center;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .submit-btn {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2, h3 {
+            color: #ff6347;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <h1>CRAVE COURIER</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="btn"> 🏠︎ Home</a></li>
+                    <li><a href="menu.html" class="btn">🔰Menu</a></li>
+                    <li><a href="about.html" class="btn">🛈About Us</a></li>
+                    <li><a href="contact.html" class="btn">📞Contact</a></li>
+                    <li><a href="login.html" class="btn">👤Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <div class="header-content">
-        <h1>CRAVE COURIER</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="btn"> 🏠︎ Home</a></li>
-                <li><a href="menu.html" class="btn">🔰Menu</a></li>
-                <li><a href="about.html" class="btn">🛈About Us</a></li>
-                <li><a href="contact.html" class="btn">📞Contact</a></li>
-                <li><a href="login.html" class="btn">👤Login</a></li>
-            </ul>
-        </nav>
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+
+        <!-- Contact Information Section -->
+        <div class="contact-section">
+            <h3>Our Contact Information</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Address</h4>
+                    <p>Seawoods, Navi Mumbai, India</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>+91 1234567890</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>praveer1011@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="contact-section">
+            <h3>Send Us a Message</h3>
+            <form class="contact-form" action="../php/send_message.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Business Hours Section -->
+        <div class="contact-section">
+            <h3>Business Hours</h3>
+            <div style="text-align: center;">
+                <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 11:00 AM - 11:00 PM</p>
+            </div>
+        </div>
     </div>
-</header>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>If you have any inquiries, feedback, or concerns, feel free to reach out to us!</p>
-    <p>You can contact us at:</p>
-    <p>Email: praveer1011@gmail.com</p>
-    <p>Phone: 9999999999</p>
-    <p>Follow us on our social media channels:</p>
-    <p><a href="#" class="btn">Facebook</a></p>
-    <p><a href="#" class="btn">Instagram</a></p>
-    <p><a href="#" class="btn">Twitter  </a></p>
-</section>
-
-<section id="send-message">
-    <h3>Send Us a Message</h3>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message">
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2023 Crave Courier. All rights reserved.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2024 Crave Courier. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
 </body>
 </html>

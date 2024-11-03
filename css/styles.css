@@ -67,18 +67,32 @@ nav ul li a:hover {
 }
 
 footer {
-  background-color: #ff6347;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 10px;
+  background-color: #ff6347;       
+  color: white;                    
+  padding: 20px;                  
+  text-align: center;              
+  margin-top: 10px;               /* Space above footer */
+  margin-bottom: 50px;            /* Space below footer */
 }
 
 footer a {
-  color: #ffcc00;
-  text-decoration: none;
+  color: #ffcc00;                 
+  text-decoration: none;          
+  transition: all 0.3s ease;      
 }
 
+footer a:hover {
+  color: #fff;                   
+  text-decoration: underline;     
+}
+
+/* Optional: Add responsive styling */
+@media screen and (max-width: 768px) {
+  footer {
+      padding: 15px;              
+      margin-bottom: 30px;        
+  }
+}
 
 #hero {
   background-image: url('../images/food.jpg');
@@ -163,56 +177,15 @@ footer a {
   margin-bottom: 10px;
 }
 
-/* Menu Section */
-section#menu {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 50px 20px;
-  background-color: var(--background-color);
-}
-
-.menu-item {
-  flex: 0 0 calc(25% - 40px);
-  max-width: calc(25% - 40px);
-  text-align: center;
-  margin: 0 20px 30px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: scale(1.05);
-}
-
-.menu-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  height: 200px;
-  margin-bottom: 10px;
-  display: flex;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 /* About Us Section */
 #about-us {
   background-color: white;
-  padding: 20px 20px;
+  padding: 20px 30px;
   text-align: center;
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  margin: 20px auto; 
-  max-width: 600px;
+  border: 1px solid var(--primary-color);
+  max-width: 100%;
+  margin: bottom 10px;
 }
 
 #about-us h2 {
@@ -226,77 +199,6 @@ section#menu {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
-/* Contact Section */
-#contact {
-  background-color: white;
-  color: black;
-  padding: 20px 20px;
-  text-align: center;
-  border: 2px solid var(--primary-color); 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  margin: 20px auto; 
-  max-width: 600px; 
-  margin-bottom: 50px;
-}
-
-#send-message {
-  background-color: #f5f5f5; 
-  color: black;
-  padding: 50px 20px;
-  text-align: center;
-  border: 2px solid black; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  margin: 50px auto; 
-  max-width: 600px; 
-}
-
-#contact h2, #send-message h3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-#send-message h3 {
-  font-size: 2rem;
-  margin-top: 30px; 
-}
-
-#send-message form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px; 
-}
-
-#send-message input, #send-message textarea {
-  width: 80%;
-  max-width: 500px;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-#send-message input[type="submit"] {
-  background-color: var(--secondary-color);
-  color: black;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#send-message input[type="submit"]:hover {
-  background-color: #f2b200;
-}
-#contact p .btn{
-  display: grid;
-  width:90px;
-  text-align: center;
-  margin-left: 230px;
-}
-
 
 @media (max-width: 768px) {
   header {

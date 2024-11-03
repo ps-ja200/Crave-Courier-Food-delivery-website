@@ -266,12 +266,15 @@
             .then(data => {
                 if (data.status === 'success') {
                     console.log('✅ Login Successful!');  // Success message in console
-                    console.log('🔄 Redirecting to:', data.redirect);  // Redirect message
+                    console.log('🔄 Redirecting to:', data.redirect);  // Redirect message in console
                     
-                    // Redirect after a brief delay
+                    // Show alert message
+                    alert('Login Successful! Redirecting to menu page.');
+                    
+                    // Redirect after the alert is dismissed
                     setTimeout(() => {
                         window.location.href = data.redirect;
-                    }, 1000); // 1 second delay
+                    }, 100); // Small delay to ensure alert is shown before redirect
                 } else {
                     console.error('❌ Login failed:', data.message);
                     alert(data.message || 'Login failed. Please try again.');

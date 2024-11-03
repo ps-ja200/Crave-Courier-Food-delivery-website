@@ -7,82 +7,124 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Food-delivery-website/css/styles.css">
     <style>
+        :root {
+            --primary-color: #ff6347;
+            --secondary-color: #ffcc00;
+            --background-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --hover-bg: #f8f8f8;
+            --text-dark: #2c3e50;
+            --text-body: #555555;
+            --text-light: #ffffff;
+            --accent-hover: #e65942;
+            --accent-yellow: #f2b200;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f8f8f8;
-            
+            background-color: var(--background-color);
             margin: 0;
         }
+    
         #login-form {
             max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
+            margin: 40px auto;
+            background-color: var(--card-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+    
+        #login-form:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+    
         #login-form h2 {
             font-size: 28px;
             margin-bottom: 30px;
             text-align: center;
-            color: #333;
+            color: var(--text-dark);
+            position: relative;
         }
-
+    
+        #login-form h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto;
+        }
+    
         #login-form label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #ff6347;
+            color: var(--primary-color);
         }
-
+    
         #login-form input[type="text"],
         #login-form input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             box-sizing: border-box;
             font-size: 16px;
+            transition: border-color 0.3s ease;
         }
-
+    
+        #login-form input[type="text"]:focus,
+        #login-form input[type="password"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.1);
+        }
+    
         #login-form input[type="submit"] {
             width: 100%;
-            padding: 10px;
-            background-color: #ff6347;
-            color: #fff;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
-
+    
         #login-form input[type="submit"]:hover {
-            background-color: #e5533d;
+            background-color: var(--accent-hover);
         }
-
+    
         #login-form p {
             margin-top: 30px;
             text-align: center;
+            color: var(--text-body);
         }
-
+    
         #login-form p a {
-            color: #ff6347;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
-
+    
         #login-form p a:hover {
-            text-decoration: underline;
+            color: var(--accent-hover);
         }
-
-        
+    
         .password-container {
             position: relative;
         }
-
+    
         #show-password {
             position: absolute;
             right: 10px;
@@ -90,20 +132,63 @@
             transform: translateY(-50%);
             cursor: pointer;
             user-select: none;
+            transition: opacity 0.3s ease;
         }
-
+    
+        #show-password:hover {
+            opacity: 0.7;
+        }
+    
         .forgot-password {
             text-align: right;
-            margin-top: 10px;
+            margin-top: -15px;
+            margin-bottom: 20px;
         }
-
+    
         .forgot-password a {
-            color: #ff6347;
+            color: var(--text-body);
             text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
         }
-
+    
         .forgot-password a:hover {
-            text-decoration: underline;
+            color: var(--primary-color);
+        }
+    
+        @media screen and (max-width: 480px) {
+            #login-form {
+                margin: 20px;
+                padding: 20px;
+            }
+    
+            #login-form h2 {
+                font-size: 24px;
+            }
+    
+            #login-form input[type="submit"] {
+                font-size: 16px;
+            }
+        }
+    
+        @media (prefers-contrast: high) {
+            #login-form {
+                border: 2px solid var(--text-dark);
+            }
+    
+            #login-form input[type="text"],
+            #login-form input[type="password"] {
+                border: 2px solid var(--text-dark);
+            }
+        }
+    
+        @media (prefers-reduced-motion: reduce) {
+            #login-form,
+            #login-form input,
+            .forgot-password a,
+            #show-password {
+                transition: none;
+            }
         }
     </style>
 </head>
@@ -118,6 +203,7 @@
                     <li><a href="about.html" class="btn">🛈About Us</a></li>
                     <li><a href="contact.html" class="btn">📞Contact</a></li>
                     <li><a href="login.html" class="btn">👤Login</a></li>
+                    <li><a href="../php/manage.php" class="btn">Manage</a></li>
                 </ul>
             </nav>
         </div>
@@ -125,7 +211,7 @@
 
     <section id="login-form">
         <h2>Login</h2>
-        <form action="../php/login.php" method="post" onsubmit="return validateForm()">
+        <form id="loginForm" action="../php/login.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
@@ -140,15 +226,7 @@
         </form>
         <p><a href="signup.html">Don't have an account? Sign up</a></p>
     </section>
-
-    <footer>
-        <p>&copy; 2024 Crave Courier. All Rights Reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Terms of Service</a>
-        </p>
-    </footer>
-
+    
     <script>
     function validateForm() {
         const username = document.getElementById('username').value;
@@ -166,21 +244,63 @@
         
         return true;
     }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('loginForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return false;
+            }
+            
+            var formData = new FormData(this);
 
-    let isPasswordVisible = false;
-    document.getElementById('show-password').addEventListener('click', function() {
-        const passwordInput = document.getElementById('password');
-        const eyeIcon = document.getElementById('show-password');
-        
-        if (isPasswordVisible) {
-            passwordInput.type = 'password';
-            eyeIcon.textContent = '👁️'; // Closed eye
-        } else {
-            passwordInput.type = 'text';
-            eyeIcon.textContent = '👁️‍🗨️'; // Open eye
-        }
-        
-        isPasswordVisible = !isPasswordVisible;
+            fetch('../php/login.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log('✅ Login Successful!');  // Success message in console
+                    console.log('🔄 Redirecting to:', data.redirect);  // Redirect message
+                    
+                    // Redirect after a brief delay
+                    setTimeout(() => {
+                        window.location.href = data.redirect;
+                    }, 1000); // 1 second delay
+                } else {
+                    console.error('❌ Login failed:', data.message);
+                    alert(data.message || 'Login failed. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('❌ Fetch error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    }
+
+    
+        // Password visibility toggle
+        let isPasswordVisible = false;
+        document.getElementById('show-password').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('show-password');
+            
+            if (isPasswordVisible) {
+                passwordInput.type = 'password';
+                eyeIcon.textContent = '👁️';
+            } else {
+                passwordInput.type = 'text';
+                eyeIcon.textContent = '👁️‍🗨️';
+            }
+            
+            isPasswordVisible = !isPasswordVisible;
+        });
     });
     </script>
 </body>

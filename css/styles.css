@@ -80,10 +80,8 @@ nav ul li a:hover {
 footer {
   background-color: var(--primary-color);
   color: var(--text-light);
-  padding: 20px;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 50px;
+  padding: 20px;
 }
 
 footer a {
@@ -212,9 +210,7 @@ footer a:hover {
   background-color: var(--section-bg);
   padding: 20px 30px;
   text-align: center;
-  border: 1px solid var(--primary-color);
   max-width: 100%;
-
 }
 
 #about-us h2 {
@@ -226,16 +222,16 @@ footer a:hover {
 #about-us p {
   color: var(--text-color);
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
 #contact {
   background-color: var(--section-bg);
-  padding: 20px 30px;
+  padding: 10px 30px;
   text-align: center;
-  border: 1px solid var(--primary-color);
   max-width: 100%;
+  margin-bottom: 30px;
 }
 
 #contact h2 {

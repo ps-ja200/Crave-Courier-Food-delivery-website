@@ -108,21 +108,6 @@
 </footer>
 
 <script>
-    // Add to cart functionality
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    const cartCount = document.querySelector('.cart-count');
-    let count = 0;
-
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            count++;
-            cartCount.textContent = count;
-            alert('Item added to cart!');
-        });
-    });
-
-    // Highlight current page in navigation
     const currentPage = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {

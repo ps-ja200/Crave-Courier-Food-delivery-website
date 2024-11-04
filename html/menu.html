@@ -325,26 +325,5 @@ h2::after {
             <a href="#">Terms of Service</a>
         </p>
     </footer>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    fetch('../php/get_menu.php')
-        .then(response => response.json())
-        .then(data => {
-            const menuContainer = document.querySelector('.menu-items');
-            menuContainer.innerHTML = '';
-            data.forEach(item => {
-                menuContainer.innerHTML += `
-                    <div class="menu-item">
-                        <img src="${item.image_url}" alt="${item.name}">
-                        <h4>${item.name}</h4>
-                        <p>${item.description}</p>
-                        <span class="price">₹${item.price}</span>
-                        <button class="btn add-to-cart" data-id="${item.id}">Add to Cart</button>
-                    </div>
-                `;
-            });
-        });
-});  
-    </script>
 </body>
 </html>

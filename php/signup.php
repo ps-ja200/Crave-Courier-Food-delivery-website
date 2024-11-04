@@ -19,10 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Hash password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Check if username or email already exists
+   
     $checkQuery = "SELECT * FROM users WHERE username = ? OR email = ?";
     $stmt = $conn->prepare($checkQuery);
     $stmt->bind_param("ss", $username, $email);
@@ -32,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         echo "Username or Email already exists!";
     } else {
-        // Insert the new user into the database
+       
         $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $username, $email, $hashed_password);

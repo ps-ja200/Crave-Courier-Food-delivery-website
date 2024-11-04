@@ -265,16 +265,16 @@
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('✅ Login Successful!');  // Success message in console
-                    console.log('🔄 Redirecting to:', data.redirect);  // Redirect message in console
+                    console.log('✅ Login Successful!');  
+                    console.log('🔄 Redirecting to:', data.redirect);  
                     
-                    // Show alert message
+                 
                     alert('Login Successful! Redirecting to menu page.');
                     
-                    // Redirect after the alert is dismissed
+                  
                     setTimeout(() => {
                         window.location.href = data.redirect;
-                    }, 100); // Small delay to ensure alert is shown before redirect
+                    }, 100); 
                 } else {
                     console.error('❌ Login failed:', data.message);
                     alert(data.message || 'Login failed. Please try again.');
@@ -288,7 +288,7 @@
     }
 
     
-        // Password visibility toggle
+      
         let isPasswordVisible = false;
         document.getElementById('show-password').addEventListener('click', function() {
             const passwordInput = document.getElementById('password');

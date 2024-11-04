@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     
     try {
-        // Check if email exists in users table
+       
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -22,30 +22,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo json_encode(['status' => 'error', 'message' => 'Email not found in our records.']);
             exit;
         }
-
-        // Generate 6-digit OTP
         $otp = sprintf("%06d", mt_rand(1, 999999));
         
-        // Store OTP in database
+       
         $expiry = date('Y-m-d H:i:s', strtotime('+15 minutes'));
         
-        // Delete any existing OTP
+    
         $stmt = $conn->prepare("DELETE FROM password_reset_tokens WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         
-        // Insert new OTP
         $stmt = $conn->prepare("INSERT INTO password_reset_tokens (email, otp, expires_at) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $email, $otp, $expiry);
         $stmt->execute();
 
-        // Send email
+    
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'praveersingh.j@somaiya.edu'; // Your Gmail
-        $mail->Password = 'sjgf vnen eebl mrir'; // Your Gmail App Password
+        $mail->Username = 'praveersingh.j@somaiya.edu'; 
+        $mail->Password = 'sjgf vnen eebl mrir'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
@@ -112,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <h2>Forgot Password</h2>
         
-        <!-- Email Form -->
+       
         <form id="emailForm">
             <div class="form-group">
                 <label for="email">Enter your email address:</label>
@@ -121,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Send OTP</button>
         </form>
 
-        <!-- OTP Form (initially hidden) -->
         <form id="otpForm" style="display: none;">
             <div class="form-group">
                 <label for="otp">Enter OTP:</label>
@@ -192,8 +188,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             
             try {
-                 // Implement password reset logic here
-                // For now, just show a success message
                 messageDiv.textContent = 'Password reset successfully!';
                 messageDiv.className = 'success';
 

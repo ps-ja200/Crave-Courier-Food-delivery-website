@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Order delicious food from Crave Courier - Your trusted food delivery service">
     <meta name="keywords" content="food delivery, restaurant, online ordering, pizza, burger">
-    <title>Crave Courier - Food Delivery</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Crave Courier - Food Delivery</title>    <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="../js/script.js"></script>
+    <script defer src="../js/cart.js"></script>
 </head>
 <body>
     
@@ -60,13 +60,12 @@
 
 <section id="featured-dishes">
     <h2>Featured Dishes</h2>
-    <div class="featured-dishes-container">
-        <div class="featured-dish">
+    <div class="featured-dishes-container">        <div class="featured-dish">
             <img src="../images/chicken burger.jpg" alt="Featured Food" loading="lazy">
             <h3>Chicken Burger</h3>
             <p>Grilled chicken breast, lettuce, tomato, and mayo on a bun.</p>
             <span class="price">₹400</span><br><br>
-            <a href="#" class="btn add-to-cart" data-id="1">Add to Cart</a>
+            <a href="#" class="btn add-to-cart" data-id="101" data-name="Chicken Burger" data-price="400" data-image="../images/chicken burger.jpg">Add to Cart</a>
         </div>
 
         <div class="featured-dish">
@@ -74,7 +73,7 @@
             <h3>Lasagna</h3>
             <p>Layers of pasta with meat, cheese, and tomato sauce</p>
             <span class="price">₹350</span><br><br>
-            <a href="#" class="btn add-to-cart" data-id="2">Add to Cart</a>
+            <a href="#" class="btn add-to-cart" data-id="102" data-name="Lasagna" data-price="350" data-image="../images/pasta.jpg">Add to Cart</a>
         </div>
 
         <div class="featured-dish">
@@ -82,7 +81,7 @@
             <h3>Pepperoni Pizza</h3>
             <p>Spicy pepperoni pizza</p>
             <span class="price">₹450</span><br><br>
-            <a href="#" class="btn add-to-cart" data-id="3">Add to Cart</a>
+            <a href="#" class="btn add-to-cart" data-id="103" data-name="Pepperoni Pizza" data-price="450" data-image="../images/pepproni.jpg">Add to Cart</a>
         </div>
     </div>
 </section>

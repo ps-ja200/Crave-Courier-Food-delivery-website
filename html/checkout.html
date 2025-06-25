@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Crave Courier</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .checkout-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 30px;
+        }
+
+        .checkout-form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .order-summary {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .payment-option {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary-color);
+        }
+
+        .payment-option.selected {
+            border-color: var(--primary-color);
+            background-color: #fff5f5;
+        }
+
+        .payment-option img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 8px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .item-details {
+            flex: 1;
+            margin-left: 15px;
+        }
+
+        .item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .total-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .total-row.final {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 15px;
+        }
+
+        .place-order-btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .place-order-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: #28a745;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>CRAVE COURIER</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="btn">🏠︎ Home</a></li>
+                    <li><a href="menu.html" class="btn">🔰Menu</a></li>
+                    <li><a href="about.html" class="btn">🛈About Us</a></li>
+                    <li><a href="contact.html" class="btn">📞Contact</a></li>
+                    <li><a href="login.html" class="btn">👤Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h2 class="section-title">Checkout</h2>
+            
+            <form id="checkoutForm">
+                <!-- Delivery Information -->
+                <div class="form-section">
+                    <h3>Delivery Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <!-- Address Information -->
+                <div class="form-section">
+                    <h3>Delivery Address</h3>
+                    <div class="form-group">
+                        <label for="address">Street Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="instructions">Delivery Instructions</label>
+                        <textarea id="instructions" name="instructions" rows="3" placeholder="Any special instructions for delivery..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="form-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-option" onclick="selectPayment('card')">
+                            <div>💳</div>
+                            <div>Credit/Debit Card</div>
+                        </div>
+                        <div class="payment-option" onclick="selectPayment('upi')">
+                            <div>📱</div>
+                            <div>UPI Payment</div>
+                        </div>
+                        <div class="payment-option" onclick="selectPayment('cod')">
+                            <div>💰</div>
+                            <div>Cash on Delivery</div>
+                        </div>
+                    </div>
+
+                    <!-- Card Details (hidden by default) -->
+                    <div id="cardDetails" style="display: none;">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number *</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date *</label>
+                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card *</label>
+                            <input type="text" id="cardName" name="cardName">
+                        </div>
+                    </div>
+
+                    <!-- UPI Details (hidden by default) -->
+                    <div id="upiDetails" style="display: none;">
+                        <div class="form-group">
+                            <label for="upiId">UPI ID *</label>
+                            <input type="text" id="upiId" name="upiId" placeholder="yourname@upi">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h3 class="section-title">Order Summary</h3>
+            
+            <div id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+
+            <div class="total-section">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0</span>
+                </div>
+                <div class="total-row">
+                    <span>Delivery Fee:</span>
+                    <span id="deliveryFee">₹50</span>
+                </div>
+                <div class="total-row">
+                    <span>Tax:</span>
+                    <span id="tax">₹0</span>
+                </div>
+                <div class="total-row final">
+                    <span>Total:</span>
+                    <span id="finalTotal">₹0</span>
+                </div>
+            </div>
+
+            <button class="place-order-btn" onclick="placeOrder()">
+                Place Order
+            </button>
+
+            <div class="secure-badge">
+                🔒 Secure Payment Protected
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Crave Courier. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        let selectedPaymentMethod = null;
+
+        function selectPayment(method) {
+            selectedPaymentMethod = method;
+            
+            // Remove selected class from all options
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            event.target.closest('.payment-option').classList.add('selected');
+            
+            // Hide all payment details
+            document.getElementById('cardDetails').style.display = 'none';
+            document.getElementById('upiDetails').style.display = 'none';
+            
+            // Show relevant payment details
+            if (method === 'card') {
+                document.getElementById('cardDetails').style.display = 'block';
+            } else if (method === 'upi') {
+                document.getElementById('upiDetails').style.display = 'block';
+            }
+        }
+
+        function loadCartItems() {
+            // This would typically load from localStorage or session
+            const sampleCart = [
+                {
+                    id: 1,
+                    name: 'Chicken Burger',
+                    price: 400,
+                    quantity: 2,
+                    image: '../images/chicken burger.jpg'
+                },
+                {
+                    id: 2,
+                    name: 'Pepperoni Pizza',
+                    price: 450,
+                    quantity: 1,
+                    image: '../images/pepproni.jpg'
+                }
+            ];
+
+            const cartItemsContainer = document.getElementById('cartItems');
+            let subtotal = 0;
+
+            cartItemsContainer.innerHTML = sampleCart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                return `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-details">
+                            <div class="item-name">${item.name}</div>
+                            <div class="item-price">₹${item.price}</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        </div>
+                        <div class="item-price">₹${itemTotal}</div>
+                    </div>
+                `;
+            }).join('');
+
+            // Update totals
+            const deliveryFee = 50;
+            const taxRate = 0.18; // 18% GST
+            const tax = Math.round(subtotal * taxRate);
+            const total = subtotal + deliveryFee + tax;
+
+            document.getElementById('subtotal').textContent = `₹${subtotal}`;
+            document.getElementById('tax').textContent = `₹${tax}`;
+            document.getElementById('finalTotal').textContent = `₹${total}`;
+        }
+
+        function updateQuantity(itemId, newQuantity) {
+            if (newQuantity < 1) return;
+            // Update cart and reload items
+            console.log(`Update item ${itemId} to quantity ${newQuantity}`);
+            // In real implementation, update localStorage/session and reload
+        }
+
+        function placeOrder() {
+            if (!selectedPaymentMethod) {
+                alert('Please select a payment method');
+                return;
+            }
+
+            const form = document.getElementById('checkoutForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Process order
+            const orderData = {
+                customer: {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value
+                },
+                address: {
+                    street: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    zipCode: document.getElementById('zipCode').value,
+                    instructions: document.getElementById('instructions').value
+                },
+                paymentMethod: selectedPaymentMethod,
+                total: document.getElementById('finalTotal').textContent
+            };
+
+            // In real implementation, send to PHP backend
+            alert('Order placed successfully! You will receive a confirmation email shortly.');
+            console.log('Order data:', orderData);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartItems();
+        });
+    </script>
+</body>
+</html>

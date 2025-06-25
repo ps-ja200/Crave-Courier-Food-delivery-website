@@ -182,20 +182,18 @@ h2::after {
 
         <section class="menu-category">
             <h3>Pizzas</h3>
-            <div class="menu-items">
-                <div class="menu-item">
+            <div class="menu-items">                <div class="menu-item">
                     <img src="../images/margherita.jpg" alt="Pizza">
                     <h4>Margherita</h4>
                     <p>Classic Margherita pizza with tomato, mozzarella, and basil.</p>
-                    <h4><span class="price">₹400</span></h4>
-                    <p><a href="#" class="btn">Add to Cart</a></p>
-                </div>
-                <div class="menu-item">
+                    <span class="price">₹400</span>
+                    <a href="#" class="btn add-to-cart" data-id="1" data-name="Margherita Pizza" data-price="400" data-image="../images/margherita.jpg">Add to Cart</a>
+                </div>                <div class="menu-item">
                     <img src="../images/pepproni.jpg" alt="Pizza">
                     <h4>Pepperoni</h4>
                     <p>Pepperoni pizza with tomato sauce and mozzarella cheese.</p>
-                    <h4><span class="price">₹500</span></h4>
-                    <p><a href="#" class="btn">Add to Cart</a></p>
+                    <span class="price">₹500</span>
+                    <a href="#" class="btn add-to-cart" data-id="2" data-name="Pepperoni Pizza" data-price="500" data-image="../images/pepproni.jpg">Add to Cart</a>
                 </div>
                 <div class="menu-item">
                     <img src="../images/hawaiian.jpg" alt="Pizza">
@@ -316,14 +314,15 @@ h2::after {
             </div>
         </section>
     </div>
-    </section>
-
-    <footer>
+    </section>    <footer>
         <p>&copy; 2024 Crave Courier. All Rights Reserved.</p>
         <p>
             <a href="#">Privacy Policy</a> | 
             <a href="#">Terms of Service</a>
         </p>
     </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>

@@ -41,12 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'praveersingh.j@somaiya.edu'; 
-        $mail->Password = ''; 
+        $mail->Username = 'your_email@example.com'; // <-- Set your SMTP email here
+        $mail->Password = ''; // <-- Set your SMTP password here
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->setFrom('praveersingh.j@somaiya.edu', 'Crave Courier');
+        $mail->setFrom('your_email@example.com', 'Crave Courier'); // <-- Set your sender email here
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = 'Password Reset OTP';

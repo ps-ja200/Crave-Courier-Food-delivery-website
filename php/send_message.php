@@ -27,14 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'praveersingh.j@somaiya.edu'; 
+        $mail->Username = 'your@email.com'; 
         $mail->Password = ''; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         
         $mail->setFrom($email, $name); 
-        $mail->addAddress('praveersingh.j@somaiya.edu', 'Praveer'); 
+        $mail->addAddress('your@email.com', 'Recipient'); 
         $mail->addReplyTo($email, $name); 
 
       

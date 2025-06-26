@@ -12,16 +12,25 @@ class ShoppingCart {
     }
 
     createCartElements() {
-        // Create cart icon in header if it doesn't exist
+        // Create or remove cart icon in header based on cart contents
         const nav = document.querySelector('nav ul');
-        if (nav && !document.querySelector('.cart-icon')) {
-            const cartLi = document.createElement('li');
-            cartLi.innerHTML = `
-                <a href="#" class="btn cart-icon" onclick="cart.toggleCart()">
-                    🛒 Cart (<span class="cart-count">0</span>)
-                </a>
-            `;
-            nav.appendChild(cartLi);
+        const existingCartLi = document.querySelector('li .cart-icon')?.parentElement;
+        if (this.getItemCount() > 0) {
+            if (!existingCartLi && nav) {
+                const cartLi = document.createElement('li');
+                cartLi.innerHTML = `
+                    <a href="#" class="btn cart-icon" onclick="cart.toggleCart()">
+                        🛒 Cart (<span class="cart-count">${this.getItemCount()}</span>)
+                    </a>
+                `;
+                nav.appendChild(cartLi);
+            } else if (existingCartLi) {
+                // Update cart count if already exists
+                const cartCount = existingCartLi.querySelector('.cart-count');
+                if (cartCount) cartCount.textContent = this.getItemCount();
+            }
+        } else if (existingCartLi) {
+            existingCartLi.remove();
         }
 
         // Create cart sidebar if it doesn't exist

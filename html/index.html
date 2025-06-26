@@ -1,120 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Order delicious food from Crave Courier - Your trusted food delivery service">
-    <meta name="keywords" content="food delivery, restaurant, online ordering, pizza, burger">
-    <title>Crave Courier - Food Delivery</title>    <link rel="stylesheet" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <script defer src="../js/script.js"></script>
-    <script defer src="../js/cart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order delicious food from Crave Courier - Your trusted food delivery service">
+  <meta name="keywords" content="food delivery, restaurant, online ordering, pizza, burger">
+  <title>Crave Courier - Food Delivery</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="../js/script.js"></script>
+  <script defer src="../js/cart.js"></script>
 </head>
 <body>
-    
-<header>
+  <header>
     <div class="header-content">
-        <h1>CRAVE COURIER</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="btn"> 🏠︎ Home</a></li>
-                <li><a href="menu.html" class="btn">🔰Menu</a></li>
-                <li><a href="about.html" class="btn">🛈About Us</a></li>
-                <li><a href="contact.html" class="btn">📞Contact</a></li>
-                <li><a href="login.html" class="btn">👤Login</a></li>
-            </ul>
-        </nav>
+      <h1>CRAVE COURIER</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="btn">🏠︎ Home</a></li>
+          <li><a href="menu.html" class="btn">🔰Menu</a></li>
+          <li><a href="about.html" class="btn">🛈About Us</a></li>
+          <li><a href="contact.html" class="btn">📞Contact</a></li>
+          <li><a href="login.html" class="btn">👤Login</a></li>
+        </ul>
+      </nav>
     </div>
-</header>
+  </header>
 
-<section id="hero">
+  <section id="hero">
     <div class="hero-content">
-        <h2>Delicious Food Delivered to Your Doorstep</h2>
-        <p>Order now and enjoy a variety of mouthwatering dishes!</p>
-        <a href="../html/menu.html" class="btn">Order Now</a>
+      <h2>Delicious Food Delivered to Your Doorstep</h2>
+      <p>Order now and enjoy a variety of mouthwatering dishes!</p>
+      <a href="menu.html" class="btn">Order Now</a>
     </div>
-</section>
+  </section>
 
-<div class="section-container">
-    <section id="discounts">
-        <div class="discounts-content">
-            <h2>Special Discounts</h2>
-            <p>Grab our exclusive discounts and save big on your favorite dishes!</p>
-            <ul class="discount-list">
-                <ul>Get 20% off on your first order! Use code: FIRST20</ul><br>
-                <ul>Buy one get one free on all pizzas every Tuesday!</ul><br>
-                <ul>Free dessert with orders above ₹500!</ul>
-            </ul><br>
-            <a href="../html/menu.html" class="btn">Claim Your Discount</a>
-        </div>
+  <div class="section-container home-sections" style="display:flex;justify-content:center;align-items:stretch;gap:32px;">
+    <section id="discounts" style="flex:1;max-width:420px;">
+      <div class="discounts-content">
+        <h2>Special Discounts</h2>
+        <p>Grab our exclusive discounts and save big on your favorite dishes!</p>
+        <ul class="discount-list">
+          <li>Get 20% off on your first order! Use code: <strong>FIRST20</strong></li>
+          <li>Buy one get one free on all pizzas every Tuesday!</li>
+          <li>Free dessert with orders above ₹500!</li>
+        </ul>
+        <a href="menu.html" class="btn">Claim Your Discount</a>
+      </div>
     </section>
 
-    <section id="delivery-guarantee">
-        <div class="delivery-guarantee-content">
-            <h2>Delivery Guarantee</h2>
-            <p>Your order is guaranteed to be delivered within 30 minutes. If it's not, your order is free!</p>
-            <img src="../images/30 minutes delivery.jpg" alt="30 minutes delivery guarantee" loading="lazy">
-        </div>
+    <section id="delivery-guarantee" style="flex:1;max-width:420px;display:flex;align-items:center;justify-content:center;">
+      <div class="delivery-guarantee-content" style="width:100%;text-align:center;">
+        <h2>Delivery Guarantee</h2>
+        <p>Your order is guaranteed to be delivered within 30 minutes. If it's not, your order is free!</p>
+        <img src="../images/30 minutes delivery.jpg" alt="30 minutes delivery guarantee" loading="lazy" style="max-width:100%;height:auto;margin:0 auto;">
+      </div>
     </section>
-</div>
+  </div>
+  <hr class="section-divider">
 
-<section id="featured-dishes">
+  <section id="featured-dishes">
     <h2>Featured Dishes</h2>
-    <div class="featured-dishes-container">        <div class="featured-dish">
-            <img src="../images/chicken burger.jpg" alt="Featured Food" loading="lazy">
-            <h3>Chicken Burger</h3>
-            <p>Grilled chicken breast, lettuce, tomato, and mayo on a bun.</p>
-            <span class="price">₹400</span><br><br>
-            <a href="#" class="btn add-to-cart" data-id="101" data-name="Chicken Burger" data-price="400" data-image="../images/chicken burger.jpg">Add to Cart</a>
-        </div>
+    <div class="featured-dishes-container">
+      <div class="featured-dish">
+        <img src="../images/chicken burger.jpg" alt="Chicken Burger" loading="lazy">
+        <h3>Chicken Burger</h3>
+        <p>Grilled chicken breast, lettuce, tomato, and mayo on a bun.</p>
+        <span class="price">₹400</span>
+        <a href="#" class="btn add-to-cart" data-id="101" data-name="Chicken Burger" data-price="400" data-image="../images/chicken burger.jpg">Add to Cart</a>
+      </div>
 
-        <div class="featured-dish">
-            <img src="../images/pasta.jpg" alt="Lasagna" loading="lazy">
-            <h3>Lasagna</h3>
-            <p>Layers of pasta with meat, cheese, and tomato sauce</p>
-            <span class="price">₹350</span><br><br>
-            <a href="#" class="btn add-to-cart" data-id="102" data-name="Lasagna" data-price="350" data-image="../images/pasta.jpg">Add to Cart</a>
-        </div>
+      <div class="featured-dish">
+        <img src="../images/pasta.jpg" alt="Lasagna" loading="lazy">
+        <h3>Lasagna</h3>
+        <p>Layers of pasta with meat, cheese, and tomato sauce</p>
+        <span class="price">₹350</span>
+        <a href="#" class="btn add-to-cart" data-id="102" data-name="Lasagna" data-price="350" data-image="../images/pasta.jpg">Add to Cart</a>
+      </div>
 
-        <div class="featured-dish">
-            <img src="../images/pepproni.jpg" alt="Pepperoni Pizza" loading="lazy">
-            <h3>Pepperoni Pizza</h3>
-            <p>Spicy pepperoni pizza</p>
-            <span class="price">₹450</span><br><br>
-            <a href="#" class="btn add-to-cart" data-id="103" data-name="Pepperoni Pizza" data-price="450" data-image="../images/pepproni.jpg">Add to Cart</a>
-        </div>
+      <div class="featured-dish">
+        <img src="../images/pepproni.jpg" alt="Pepperoni Pizza" loading="lazy">
+        <h3>Pepperoni Pizza</h3>
+        <p>Spicy pepperoni pizza</p>
+        <span class="price">₹450</span>
+        <a href="#" class="btn add-to-cart" data-id="103" data-name="Pepperoni Pizza" data-price="450" data-image="../images/pepproni.jpg">Add to Cart</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="about-us">
-    <h2>About Us</h2>
-    <p>At Crave Courier, we are passionate about delivering delicious food right to your doorstep.</p>
-    <p><a href="about.html" class="btn">Learn more</a></p>
-</section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Get in touch with us for any inquiries or feedback.</p>
-    <p><a href="contact.html" class="btn">Contact now</a></p>
-</section>
-
-<footer>
+  <footer>
     <p>&copy; 2024 Crave Courier. All Rights Reserved.</p>
     <p>
-        <a href="#">Privacy Policy</a> | 
-        <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
     </p>
-</footer>
-
-<script>
-    const currentPage = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        if (link.getAttribute('href').includes(currentPage)) {
-            link.classList.add('active');
-        }
-    });
-</script>
-
+  </footer>
 </body>
 </html>

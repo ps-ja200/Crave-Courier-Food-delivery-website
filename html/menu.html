@@ -3,170 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Crave Courier</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-    background-color: lightcyan;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--text-body);
-}
-
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h2 {
-    text-align: center;
-    font-size: 50px;
-    color: var(--primary-color);
-    position: relative;
-    margin: 0;
-    padding: 30px 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 10px auto;
-}
-
-.menu-category {
-    padding: 20px;
-    margin: 50px auto;
-    max-width: 800px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    transform: translateY(-50px);
-    transition: transform 0.3s;
-}
-
-.menu-category:hover {
-    transform: translateY(0);
-}
-
-.menu-category h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.menu-category h3::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 10px auto;
-}
-
-.menu-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.menu-item {
-    width: calc(50% - 40px);
-    margin: 10px 0;
-    padding: 15px;
-    background-color: var(--card-bg);
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.menu-item:hover {
-    background-color: var(--hover-bg);
-    transform: translateY(-10px);
-}
-
-.menu-item img {
-    width: 100%;
-    max-width: 300px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: transform 0.3s;
-}
-
-.menu-item img:hover {
-    transform: scale(1.05);
-}
-
-.menu-item h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin: 0 0 10px 0;
-}
-
-.menu-item p {
-    font-size: 0.9rem;
-    color: var(--text-body);
-    margin-bottom: 15px;
-    min-height: 40px;
-}
-
-.menu-item .price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    display: block;
-    margin: 15px 0;
-}
-
-.menu-item .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-
-.menu-item .btn:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-}
-
-@media (max-width: 768px) {
-    .menu-item {
-        width: calc(100% - 40px);
-    }
-}
-    </style>
 </head>
-
 <body>
     <header>
         <div class="header-content">
             <h1>CRAVE COURIER</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="btn"> 🏠︎ Home</a></li>
+                    <li><a href="index.html" class="btn">🏠︎ Home</a></li>
                     <li><a href="menu.html" class="btn">🔰Menu</a></li>
                     <li><a href="about.html" class="btn">🛈About Us</a></li>
                     <li><a href="contact.html" class="btn">📞Contact</a></li>
@@ -177,144 +24,144 @@ h2::after {
     </header>
 
     <section id="menu">
-        <div class="menu-container">
-        <h2>Menu</h2>
-
-        <section class="menu-category">
-            <h3>Pizzas</h3>
-            <div class="menu-items">                <div class="menu-item">
-                    <img src="../images/margherita.jpg" alt="Pizza">
-                    <h4>Margherita</h4>
-                    <p>Classic Margherita pizza with tomato, mozzarella, and basil.</p>
-                    <span class="price">₹400</span>
-                    <a href="#" class="btn add-to-cart" data-id="1" data-name="Margherita Pizza" data-price="400" data-image="../images/margherita.jpg">Add to Cart</a>
-                </div>                <div class="menu-item">
-                    <img src="../images/pepproni.jpg" alt="Pizza">
-                    <h4>Pepperoni</h4>
-                    <p>Pepperoni pizza with tomato sauce and mozzarella cheese.</p>
-                    <span class="price">₹500</span>
-                    <a href="#" class="btn add-to-cart" data-id="2" data-name="Pepperoni Pizza" data-price="500" data-image="../images/pepproni.jpg">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/hawaiian.jpg" alt="Pizza">
-                    <h4>Hawaiian</h4>
-                    <p>Ham, pineapple, and mozzarella cheese on tomato sauce.</p>
-                    <span class="price">₹550</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/vegpizz.jpg" alt="Pizza">
-                    <h4>Vegetarian</h4>
-                    <p>Mixed vegetables, tomato sauce, and mozzarella cheese.</p>
-                    <span class="price">₹300</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
+      <h2 style="text-align:center; margin-bottom: 32px;">Menu</h2>
+      <div class="section-container">
+        <div class="card">
+          <h3>🍕 Pizzas</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../images/margherita.jpg" alt="Pizza">
+              <h4>Margherita <span class="badge" style="background:var(--secondary-color);color:#fff;padding:2px 8px;border-radius:8px;font-size:0.8em;margin-left:8px;">Bestseller</span></h4>
+              <p>Classic Margherita pizza with tomato, mozzarella, and basil.</p>
+              <span class="price" style="color:var(--primary-color);font-weight:bold;">₹400</span>
+              <a href="#" class="btn add-to-cart" data-id="1" data-name="Margherita Pizza" data-price="400" data-image="../images/margherita.jpg">Add to Cart</a>
             </div>
-        </section>
-
-        <section class="menu-category">
-            <h3>Burgers</h3>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../images/classic burger.jpg" alt="Burger">
-                    <h4>Classic Burger</h4>
-                    <p>Chicken Patty, lettuce, tomato, onion, and pickles on a sesame seed bun.</p>
-                    <span class="price">₹350</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/chicken burger.jpg" alt="Burger">
-                    <h4>Chicken Burger</h4>
-                    <p>Grilled chicken breast, lettuce, tomato, and mayo on a bun.</p>
-                    <span class="price">₹400</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/veggie brger.jpg" alt="Burger">
-                    <h4>Veggie Burger</h4>
-                    <p>Vegetarian patty, lettuce, tomato, and avocado on a whole grain bun.</p>
-                    <span class="price">₹200</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/bbq burger.jpg" alt="Burger">
-                    <h4>BBQ Burger</h4>
-                    <p> Chicken Patty, cheddar cheese, bacon, and BBQ sauce on a brioche bun.</p>
-                    <span class="price">₹400</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
+            <div class="menu-item">
+              <img src="../images/pepproni.jpg" alt="Pizza">
+              <h4>Pepperoni</h4>
+              <p>Pepperoni pizza with tomato sauce and mozzarella cheese.</p>
+              <span class="price">₹500</span>
+              <a href="#" class="btn add-to-cart" data-id="2" data-name="Pepperoni Pizza" data-price="500" data-image="../images/pepproni.jpg">Add to Cart</a>
             </div>
-        </section>
-
-        <section class="menu-category">
-            <h3>Shawarmas</h3>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../images/chicken shwarma.jpg" alt="Shawarma">
-                    <h4>Chicken Shawarma</h4>
-                    <p>Marinated chicken wrapped in pita with garlic sauce and vegetables.</p>
-                    <span class="price">₹250</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/paneer shwar.jpg" alt="Shawarma">
-                    <h4>Paneer Shawarma</h4>
-                    <p>Slow-cooked paneer with tahini sauce and pickles in pita bread.</p>
-                    <span class="price">₹300</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/veg shwarma.jpg" alt="Shawarma">
-                    <h4>Veggie Shawarma</h4>
-                    <p>Grilled vegetables and hummus wrapped in pita bread.</p>
-                    <span class="price">₹200</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/falafel shwa.jpg" alt="Shawarma">
-                    <h4>Falafel Shawarma</h4>
-                    <p>Crispy falafel, lettuce, and tahini sauce in pita.</p>
-                    <span class="price">₹220</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
+            <div class="menu-item">
+              <img src="../images/hawaiian.jpg" alt="Pizza">
+              <h4>Hawaiian</h4>
+              <p>Ham, pineapple, and mozzarella cheese on tomato sauce.</p>
+              <span class="price">₹550</span>
+              <a href="#" class="btn add-to-cart" data-id="3" data-name="Hawaiian Pizza" data-price="550" data-image="../images/hawaiian.jpg">Add to Cart</a>
             </div>
-        </section>
-
-        <section class="menu-category">
-            <h3>Pastas</h3>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../images/spagheti.jpg" alt="Pasta">
-                    <h4>Spaghetti Bolognese</h4>
-                    <p>Spaghetti topped with traditional Bolognese sauce.</p>
-                    <span class="price">₹400</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/alfredo.jpg" alt="Pasta">
-                    <h4>Fettuccine Alfredo</h4>
-                    <p>Creamy Alfredo sauce with fettuccine pasta and parmesan cheese.</p>
-                    <span class="price">₹450</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/pesto.jpg" alt="Pasta">
-                    <h4>Pesto Pasta</h4>
-                    <p>Pasta with basil pesto, pine nuts, and parmesan cheese.</p>
-                    <span class="price">₹380</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../images/pasta.jpg" alt="Pasta">
-                    <h4>Lasagna</h4>
-                    <p>Layers of pasta with meat, cheese, and tomato sauce.</p>
-                    <span class="price">₹500</span>
-                    <a href="#" class="btn">Add to Cart</a>
-                </div>
+            <div class="menu-item">
+              <img src="../images/vegpizz.jpg" alt="Pizza">
+              <h4>Vegetarian</h4>
+              <p>Mixed vegetables, tomato sauce, and mozzarella cheese.</p>
+              <span class="price">₹300</span>
+              <a href="#" class="btn add-to-cart" data-id="4" data-name="Vegetarian Pizza" data-price="300" data-image="../images/vegpizz.jpg">Add to Cart</a>
             </div>
-        </section>
-    </div>
-    </section>    <footer>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🍔 Burgers</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../images/classic burger.jpg" alt="Burger">
+              <h4>Classic Burger</h4>
+              <p>Chicken Patty, lettuce, tomato, onion, and pickles on a sesame seed bun.</p>
+              <span class="price">₹350</span>
+              <a href="#" class="btn add-to-cart" data-id="5" data-name="Classic Burger" data-price="350" data-image="../images/classic burger.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/chicken burger.jpg" alt="Burger">
+              <h4>Chicken Burger <span class="badge" style="background:var(--secondary-color);color:#fff;padding:2px 8px;border-radius:8px;font-size:0.8em;margin-left:8px;">Bestseller</span></h4>
+              <p>Grilled chicken breast, lettuce, tomato, and mayo on a bun.</p>
+              <span class="price" style="color:var(--primary-color);font-weight:bold;">₹400</span>
+              <a href="#" class="btn add-to-cart" data-id="6" data-name="Chicken Burger" data-price="400" data-image="../images/chicken burger.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/veggie brger.jpg" alt="Burger">
+              <h4>Veggie Burger</h4>
+              <p>Vegetarian patty, lettuce, tomato, and avocado on a whole grain bun.</p>
+              <span class="price">₹200</span>
+              <a href="#" class="btn add-to-cart" data-id="7" data-name="Veggie Burger" data-price="200" data-image="../images/veggie brger.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/bbq burger.jpg" alt="Burger">
+              <h4>BBQ Burger</h4>
+              <p>Chicken Patty, cheddar cheese, bacon, and BBQ sauce on a brioche bun.</p>
+              <span class="price">₹400</span>
+              <a href="#" class="btn add-to-cart" data-id="8" data-name="BBQ Burger" data-price="400" data-image="../images/bbq burger.jpg">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🌯 Shawarmas</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../images/chicken shwarma.jpg" alt="Shawarma">
+              <h4>Chicken Shawarma</h4>
+              <p>Marinated chicken wrapped in pita with garlic sauce and vegetables.</p>
+              <span class="price">₹250</span>
+              <a href="#" class="btn add-to-cart" data-id="9" data-name="Chicken Shawarma" data-price="250" data-image="../images/chicken shwarma.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/paneer shwar.jpg" alt="Shawarma">
+              <h4>Paneer Shawarma</h4>
+              <p>Slow-cooked paneer with tahini sauce and pickles in pita bread.</p>
+              <span class="price">₹300</span>
+              <a href="#" class="btn add-to-cart" data-id="10" data-name="Paneer Shawarma" data-price="300" data-image="../images/paneer shwar.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/veg shwarma.jpg" alt="Shawarma">
+              <h4>Veggie Shawarma</h4>
+              <p>Grilled vegetables and hummus wrapped in pita bread.</p>
+              <span class="price">₹200</span>
+              <a href="#" class="btn add-to-cart" data-id="11" data-name="Veggie Shawarma" data-price="200" data-image="../images/veg shwarma.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/falafel shwa.jpg" alt="Shawarma">
+              <h4>Falafel Shawarma</h4>
+              <p>Crispy falafel, lettuce, and tahini sauce in pita.</p>
+              <span class="price">₹220</span>
+              <a href="#" class="btn add-to-cart" data-id="12" data-name="Falafel Shawarma" data-price="220" data-image="../images/falafel shwa.jpg">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🍝 Pastas</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../images/spagheti.jpg" alt="Pasta">
+              <h4>Spaghetti Bolognese</h4>
+              <p>Spaghetti topped with traditional Bolognese sauce.</p>
+              <span class="price">₹400</span>
+              <a href="#" class="btn add-to-cart" data-id="13" data-name="Spaghetti Bolognese" data-price="400" data-image="../images/spagheti.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/alfredo.jpg" alt="Pasta">
+              <h4>Fettuccine Alfredo</h4>
+              <p>Creamy Alfredo sauce with fettuccine pasta and parmesan cheese.</p>
+              <span class="price">₹450</span>
+              <a href="#" class="btn add-to-cart" data-id="14" data-name="Fettuccine Alfredo" data-price="450" data-image="../images/alfredo.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/pesto.jpg" alt="Pasta">
+              <h4>Pesto Pasta</h4>
+              <p>Pasta with basil pesto, pine nuts, and parmesan cheese.</p>
+              <span class="price">₹380</span>
+              <a href="#" class="btn add-to-cart" data-id="15" data-name="Pesto Pasta" data-price="380" data-image="../images/pesto.jpg">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+              <img src="../images/pasta.jpg" alt="Pasta">
+              <h4>Lasagna</h4>
+              <p>Layers of pasta with meat, cheese, and tomato sauce.</p>
+              <span class="price">₹500</span>
+              <a href="#" class="btn add-to-cart" data-id="16" data-name="Lasagna" data-price="500" data-image="../images/pasta.jpg">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="section-divider">
+    <footer>
         <p>&copy; 2024 Crave Courier. All Rights Reserved.</p>
         <p>
             <a href="#">Privacy Policy</a> | 
